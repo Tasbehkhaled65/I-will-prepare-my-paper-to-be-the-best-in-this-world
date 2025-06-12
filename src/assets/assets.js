@@ -1,11 +1,42 @@
 export const cards_boket = [
-    {DayName:"Sut",   DayNumbre:"19" , month:"sep" , id: 0 },
-    {DayName:"Sun",   DayNumbre:"20" , month:"sep" , id: 1 },
-    {DayName:"Mon",   DayNumbre:"21" , month:"sep" , id: 2},
-    {DayName:"Tues",  DayNumbre:"22" , month:"sep" , id: 3},
-    {DayName:"Wed",   DayNumbre:"23" , month:"sep" , id: 4},
-    {DayName:"Thue",  DayNumbre:"24" , month:"sep" , id: 5}
+  {
+    DayName: { en: "Sat", ar: "السبت" },
+    DayNumber: "19",
+    month: { en: "Sep", ar: "سبتمبر" },
+    id: 0
+  },
+  {
+    DayName: { en: "Sun", ar: "الأحد" },
+    DayNumber: "20",
+    month: { en: "Sep", ar: "سبتمبر" },
+    id: 1
+  },
+  {
+    DayName: { en: "Mon", ar: "الاثنين" },
+    DayNumber: "21",
+    month: { en: "Sep", ar: "سبتمبر" },
+    id: 2
+  },
+  {
+    DayName: { en: "Tue", ar: "الثلاثاء" },
+    DayNumber: "22",
+    month: { en: "Sep", ar: "سبتمبر" },
+    id: 3
+  },
+  {
+    DayName: { en: "Wed", ar: "الأربعاء" },
+    DayNumber: "23",
+    month: { en: "Sep", ar: "سبتمبر" },
+    id: 4
+  },
+  {
+    DayName: { en: "Thu", ar: "الخميس" },
+    DayNumber: "24",
+    month: { en: "Sep", ar: "سبتمبر" },
+    id: 5
+  }
 ]
+
 export const time_boket = [
     { Time:"14:02" , id: 0 },
     { Time:"14:05" , id: 1 },

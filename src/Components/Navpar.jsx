@@ -133,8 +133,9 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import homeImage from "../assets/Sekka Logo.png"; 
-import { Darkmood, show_Div_Sitting_context } from '../pages/Home';
+import { Darkmood, languageContext, show_Div_Sitting_context } from '../pages/Home';
 import logo1 from '../assets/WhatsApp Image 2025-03-08 at 01.27.10_7c27d063.jpg';
+import logo2 from '../assets/egypt-flag-logo-vector-removebg-preview.png'
 import { FaList } from "react-icons/fa6";
 import logo from '../assets/WhatsApp_Image_2025-04-18_at_04.07.13_e9a3b56d-removebg-preview.png';
 import { HiXMark } from "react-icons/hi2";
@@ -142,7 +143,7 @@ import { HiXMark } from "react-icons/hi2";
 export default function Navpar() {
   const { show_Div_Sitting, setShow_Div_Sitting } = useContext(show_Div_Sitting_context);
   const [small_div, setSmall_div] = useState(false);
-  const [language, setLanguage] = useState('en'); // 'en' for English, 'ar' for Arabic
+  const {language, setLanguage} = useContext(languageContext); // 'en' for English, 'ar' for Arabic
 
   const translations = {
     en: {
@@ -170,9 +171,6 @@ export default function Navpar() {
     if (section) section.scrollIntoView({ behavior: "smooth" });
   };
 
-  const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'ar' : 'en');
-  };
 
   const navItems = [
     { id: 'Home', key: 'home' },
@@ -185,7 +183,7 @@ export default function Navpar() {
   return (
     <div className={`bg-gray-800 text-white shadow-[0_4px_10px_rgba(0,0,0,0.3)] z-50 sticky top-0`}>
       {/* شاشات كبيرة فقط (1024px فما فوق) */}
-      <div className={`hidden lg:flex w-full relative font-Inter font-medium text-[18px] justify-between items-center px-8 py-3 ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
+      <div className={`hidden lg:flex w-full relative font-Inter font-medium text-[18px] justify-between items-center px-5 py-1`}>
         <Link to={'/'} className={`flex w-[200px] justify-${language === 'ar' ? 'end' : 'start'}`}>
           <img src={homeImage} alt="Train Booking" className="max-w-full h-auto" />
         </Link>
@@ -206,9 +204,15 @@ export default function Navpar() {
           </Link>
         </div>
 
-        <div className='flex items-center gap-6'>
-          <div className='flex gap-2 items-center'>
-            <img src={logo1} className='w-7 h-5' alt="language" />
+        <div className='flex items-center gap-4'>
+          <div className='flex  items-center'>
+            {
+             language === 'en' ?
+                
+                <img src={logo1} alt="flag" className='w-[29px] h-[18px]' />
+                :
+                <img src={logo2} alt="flag" className='size-[59px] pt-1 ' />
+                }
             <select 
               className='bg-gray-800 text-sm cursor-pointer focus:outline-none'
               value={language}
@@ -232,7 +236,6 @@ export default function Navpar() {
         </div>
       </div>
 
-      {/* شاشات متوسطة وصغيرة (أقل من 1024px) */}
       <div className={`lg:hidden p-4 w-full relative font-Inter font-medium text-[18px] flex justify-between items-center ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
         <Link to={'/'} className={`flex w-[120px] justify-${language === 'ar' ? 'end' : 'start'}`}>
           <img src={homeImage} alt="Train Booking" className="h-auto max-h-[50px]" />
@@ -246,7 +249,7 @@ export default function Navpar() {
           {!small_div ? (
             <FaList className='text-2xl text-gray-500 hover:text-gray-400 transition-colors' />
           ) : (
-            <HiXMark className='text-3xl text-red-500 hover:text-red-400 transition-colors' />
+            ''
           )}
         </button>
 
@@ -287,8 +290,13 @@ export default function Navpar() {
           </Link>
           
           <div className='flex items-center gap-10 mb-auto pt-6 border-t border-grey-700'>
-            <div className='flex gap-2 items-center'>
-              <img src={logo1} className='w-7 h-5' alt="language" />
+            <div className='flex  items-center'>
+               {
+                language === 'en' ?
+                <img src={logo1} alt="flag" className='w-[29px] h-[18px]' />
+                :
+                <img src={logo2} alt="flag" className='size-[59px] pt-1 xs:ml-2' />
+                }
               <select 
                 className='bg-gray-800 text-white text-sm cursor-pointer focus:outline-none'
                 value={language}

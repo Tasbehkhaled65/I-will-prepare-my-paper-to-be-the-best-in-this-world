@@ -6,15 +6,30 @@ import { RxCounterClockwiseClock } from "react-icons/rx";
 import { FaTrainSubway } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 import List_Choice from './List_Choice';
-import { Darkmood, HistoryContext, TextContext, TimeContext } from '../pages/Home';
+import { Darkmood, HistoryContext, languageContext, TextContext, TimeContext } from '../pages/Home';
 
 export default function Question_tow() {
     const [value, setValue] = useState(1)
     const [showList, setShowList] = useState(false)
-    const { text} = useContext(TextContext) 
-    const { darkMode } = useContext(Darkmood) 
-    const {time} = useContext(TimeContext)
-    const {history} = useContext(HistoryContext)
+
+    const { text } = useContext(TextContext)
+    const { darkMode } = useContext(Darkmood)
+    const { time } = useContext(TimeContext)
+    const { history } = useContext(HistoryContext)
+    const { language } = useContext(languageContext)
+
+    // الترجمة حسب اللغة
+    const translations = {
+        degree: {
+            en: "Degree",
+            ar: "الدرجة"
+        },
+        options: {
+            en: ["Regular", "First Class", "Second Class"],
+            ar: ["عادي", "أولى مميز", "ثاني مميز"]
+        }
+    }
+
     return (
         <div className={`flex flex-col xs:w-[270px] gap-[50px] items-center w-full ${
             darkMode ? 'bg-gray-800 text-gray-100' : 'text-[#393343]'
@@ -74,7 +89,7 @@ export default function Question_tow() {
                 <p className={`text-2xl xs:pr-0 pr-[70px] font-semibold self-end ${
                     darkMode ? 'text-purple-400' : 'text-[#7367F0]'
                 }`}>
-                    الدرجة
+                    {translations.degree[language]}
                 </p>
                 <div
                     onClick={() => setShowList(!showList)}
@@ -97,11 +112,10 @@ export default function Question_tow() {
                     {showList && (
                         <div className={`absolute w-full inset-0 rounded-xl font-semibold z-10 ${
                             darkMode ? 'bg-gray-800 border-gray-700 text-gray-300' : 'bg-white border-gray-200 text-gray-400'
-                        } border mt-[50px] shadow-lg`}
-                        >
+                        } border mt-[50px] shadow-lg`}>
                             <List_Choice
-                                header={'أولى مميز'}
-                                li={['عادي', 'أولى مميز', 'ثاني مميز']}
+                                header={translations.options[language][1]} 
+                                li={translations.options[language]}
                                 darkMode={darkMode}
                             />
                         </div>

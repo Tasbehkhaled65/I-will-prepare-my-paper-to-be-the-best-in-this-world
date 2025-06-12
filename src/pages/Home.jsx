@@ -25,6 +25,7 @@ export const Darkmood = createContext()
 export const show_Div_Sitting_context = createContext()
 export const TimeContext = createContext()
 export const HistoryContext = createContext()
+export const languageContext = createContext()
 
 export default function Home() {
   const [show, setShow] = useState(false);
@@ -32,9 +33,9 @@ export default function Home() {
   const [counter, setCounter] = useState(0);
   const [show_Div, setShow_Div] = useState(0);
   const [darkMode, setDarkMode] = useState(false); 
-  const [text, setText] = useState('اولى مميز'); 
+  const [text, setText] = useState(`Select Reason`); 
   const [show_Div_Sitting , setShow_Div_Sitting] = useState(false)
-  const [language, setLanguage] = useState('ar');
+  const [language, setLanguage] = useState('en');
   const [time, setTime] = useState('14:02');
   const [history, setHistory] = useState('19 sep');
   return (
@@ -49,9 +50,10 @@ export default function Home() {
             <show_Div_Sitting_context.Provider value={{ show_Div_Sitting , setShow_Div_Sitting}}>
             <TimeContext.Provider value={{time, setTime}}>
             <HistoryContext.Provider value={{history, setHistory}}>
+            <languageContext.Provider value={{language, setLanguage}}>
     <div
       className={`flex relative flex-col 
-         items-center gap-[50px] 
+         items-center gap-[120px]  
          w-full ${darkMode ? "bg-gray-900" :'bg-white'} 
          transition-colors
           duration-300 `}
@@ -99,7 +101,7 @@ export default function Home() {
               <Route path="/" element={
             <div
                id='Booking-us'
-            className="justify-center   xs:p-0 gap-[10px] flex flex-wrap mb-0">
+            className="justify-center  xs:p-0 gap-[10px] flex flex-wrap mb-0">
                 <Curds />
                 <Curds />
                 <Curds />
@@ -152,6 +154,7 @@ export default function Home() {
                           
 
   
+            </languageContext.Provider>
             </HistoryContext.Provider>
             </TimeContext.Provider>
             </show_Div_Sitting_context.Provider>
