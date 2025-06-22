@@ -29,7 +29,7 @@ export default function Sitting_part_two() {
 
     // النصوص متعددة اللغات
     const texts = {
-        name: { ar: " تسبيح خالد", en: "tasabeh khaled" },
+        name: { ar: " تسبيح خالد", en: "tasbeh khaled" },
         profile: {
             en: "Profile",
             ar: "الملف الشخصي"

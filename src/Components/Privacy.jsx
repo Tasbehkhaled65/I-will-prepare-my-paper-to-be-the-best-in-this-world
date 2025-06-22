@@ -8,11 +8,11 @@ export default function Privacy() {
   const texts = {
     ar: {
       title: 'سياسة الخصوصية:',
-      content: `اكتشف خيارات تأجير السيارات في مصر مع تأجير السيارات. اختر من بين مجموعة من خيارات السيارات والخاصة المحلية لتناسب احتياجاتك وتفضيلاتك. نحن نلتزم بحماية خصوصيتك وتأمين بياناتك الشخصية أثناء استخدام خدماتنا.`
+      content: `هذا هو المحتوى لصفحة السياسات. هنا يمكنك وصف سياساتك سياساتنا بالتفصيل . `
     },
     en: {
       title: 'Privacy Policy:',
-      content: `Discover car rental options in Egypt with Car Rental. Choose from a wide range of local and special cars that fit your needs and preferences. We are committed to protecting your privacy and securing your personal data while using our services.`
+      content: `This is the content for the policies page. Here you can describe your policies and our policies in detail. `
     }
   };
 

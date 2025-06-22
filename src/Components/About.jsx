@@ -10,11 +10,11 @@ const About = () => {
   const texts = {
     en: {
       title: "About Us",
-      description: "A quick and easy way to book your seat on the train. A quick and easy way to book your seat on the train. A quick and easy way to book your seat on the train."
+      description: "This is the content for our information page. Here you can provide information about your company or organization."
     },
     ar: {
       title: "معلومات عنا",
-      description: "طريقة سريعة وسهلة لحجز مكانك في القطار طريقة سريعة وسهلة لحجز مكانك في القطار طريقة سريعة وسهلة لحجز مكانك في القطار"
+      description: "هذا هو المحتوى لصفحه معلومات عنا . هنا يمكنك تقديم معلومات عن شركتك أو مؤسستك "
     }
   };
 

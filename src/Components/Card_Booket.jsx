@@ -31,7 +31,7 @@ export default function Card_Booket() {
   return (
     <div className='relative xs:w-[200px]'>
       <img src={logo} className='w-[228px] xs:w-[100%] h-[151px]' />
-
+      
       <div className={`absolute flex items-center inset-0 p-[10px] pt-[15px] xs:gap-0 gap-[10px] flex-row-reverse`}>
         
         <div className='flex flex-col gap-[20px] self-start'>

@@ -20,7 +20,7 @@ export default function Sitting_partone() {
   const navigate = useNavigate()
 
   const texts = {
-    name: { ar: " تسبيح خالد", en: "tasabeh khaled" },
+    name: { ar: " تسبيح خالد", en: "tasbeh khaled" },
     profile: { ar: "الملف الشخصي", en: "Profile" },
     booking: { ar: "الحجز", en: "Booking" },
     languageLabel: { ar: "اللغه", en: "Language" },

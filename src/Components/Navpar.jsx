@@ -174,7 +174,7 @@ export default function Navpar() {
 
   const navItems = [
     { id: 'Home', key: 'home' },
-    { id: 'TimeTable', key: 'timetable' },
+    // { id: 'TimeTable', key: 'timetable' },
     { id: 'Booking-us', key: 'booking' },
     { id: 'About', key: 'about' },
     { id: 'Contact-us', key: 'contact' }
